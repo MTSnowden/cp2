@@ -1,8 +1,10 @@
-const MoviesModel = require("./mongo/model.js");
+// const MoviesModel = require("../mongo/model.js");
+const MoviesModel = require("../mongo/model");
 
-
-module.exports.list = function list(req, res) {
-  return MoviesModel.find({}).exec().then(movies => res.json(movies));
+module.exports.list = (req, res) => {
+  MoviesModel.find({}).exec().then(movies => { 
+      return res.json(movies)
+    });
 };
 module.exports.show = function show(req, res) {
   return MoviesModel.findById(req.params.id).exec().then(movie => res.json(movie)); 

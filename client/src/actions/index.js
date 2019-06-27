@@ -55,8 +55,5 @@ export function createMovie(movie) {
   
   }
 
-  module.exports = {
-      fetchMovies,
-
-  }
+ 
     

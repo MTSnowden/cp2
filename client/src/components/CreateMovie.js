@@ -8,7 +8,7 @@ class CreateMovie extends Component {
             title: "",
             director: "",
             genre: "",
-            year: number
+            year: ""
         };
     }
 
