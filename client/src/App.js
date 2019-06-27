@@ -8,7 +8,7 @@ import Router from "./router.js"
 class App extends Component {
 
   componentDidMount() {
-    fetchMovies();
+    fetchMovie();
   }
   
   render(){
