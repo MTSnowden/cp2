@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter} from "react-router-dom";
 import Buttons from "./components/Buttons"
-import Router from "./router"
+import Router from "./router.js"
 
 
 class App extends Component {
 
   componentDidMount() {
-    this.props.fetchMovies();
+    fetchMovies();
   }
   
   render(){
     return (
+
+      <div>
       <div id="title">
         MOVIE DATABASE
       </div>
@@ -23,6 +25,7 @@ class App extends Component {
           <Router /> 
         </div>
       </BrowserRouter>
+      </div>
     );
   }
 }

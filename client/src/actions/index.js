@@ -1,4 +1,4 @@
-export function fetchMovies() {
+export function fetchMovies(movies) {
     return function (dispatch) {
         
         fetch("http://localhost:3002/movies")
@@ -9,16 +9,16 @@ export function fetchMovies() {
         });
   
     };
-  }
+}
   
-  export function moviesFetched(movies) {
+export function moviesFetched(movies) {
     return {
       type: "MOVIES_FETCHED",
       value: movies
     };
-  }
+}
 
-  export function createMovie(movie) {
+export function createMovie(movie) {
     return function (dispatch) {
           
       fetch("http://localhost:3002/movies ", {
@@ -53,5 +53,10 @@ export function fetchMovies() {
     
     };
   
+  }
+
+  module.exports = {
+      fetchMovies,
+
   }
     
