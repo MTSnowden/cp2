@@ -1,7 +1,7 @@
 export function fetchMovies(movies) {
     return function (dispatch) {
         
-        fetch("http://localhost:3002/movies")
+        fetch("/movies")
         .then( (response) => {
           return response.json();
         }).then((movies) => {
@@ -21,18 +21,17 @@ export function moviesFetched(movies) {
 export function createMovie(movie) {
     return function (dispatch) {
           
-      fetch("http://localhost:3002/movies ", {
+      fetch("/movies", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(movie)
       }
-   )
-          .then( (response) => {
+   ).then( (response) => {
             return response.json();
-          }).then(() => {
-            dispatch(fetchMovies());
+          }).then((movies) => {
+            dispatch(fetchMovies(movies));
           });
     
     };

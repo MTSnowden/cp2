@@ -11,6 +11,7 @@ module.exports.show = function show(req, res) {
 };
 module.exports.create = function create(req, res) {
   const newMovie = new MoviesModel(req.body);
+  console.log(req.body, 'body');
   newMovie.save().then(savedMovie => res.json(savedMovie));
 };
 

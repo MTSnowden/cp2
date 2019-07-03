@@ -3,6 +3,8 @@ import './App.css';
 import {BrowserRouter} from "react-router-dom";
 import Buttons from "./components/Buttons"
 import Router from "./router.js"
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 class App extends Component {
@@ -14,9 +16,9 @@ class App extends Component {
   render(){
     return (
 
-      <div>
+      <body className='body'>
       <div id="title">
-        MOVIE DATABASE
+        MY AMAZING MOVIE DATABASE
       </div>
 
       <BrowserRouter>
@@ -25,7 +27,7 @@ class App extends Component {
           <Router /> 
         </div>
       </BrowserRouter>
-      </div>
+      </body>
     );
   }
 }

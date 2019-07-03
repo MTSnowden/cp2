@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require('./express/routes')
+// const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+const cors = require('cors');
 const uri = "mongodb+srv://Oprah:Oprah@cluster0-chqnf.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
@@ -11,11 +13,12 @@ client.connect(err => {
 });
 const app = express();
 app.use(router)
+app.use(cors())
 app.get("/movies", (req, res)=> {
     res.send(req.body)
 })
 
-
+// app.use(bodyParser);
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Listening on port:${port}`);
